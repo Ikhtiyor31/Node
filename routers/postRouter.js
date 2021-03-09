@@ -23,8 +23,13 @@ postRouter.post('/post', async (req, res ) => {
         content,
         image
     });
+    try {
     await post.save();
-    res.json(commonUtil.successResult());
+        res.json("saved into db");
+    } catch ( err) {
+        res.json(err);
+    }
+   
 });
 postRouter.get('/test', async ( req, res ) => {
     res.json("Hello world");

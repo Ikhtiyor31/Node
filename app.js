@@ -19,7 +19,9 @@ app.use(fileUpload({
 }));
 app.use(logger('dev'));
 app.use('/', callAllRouters);
-
+app.get('/', (req, res) => {
+    res.json("working");
+})
 const port = process.env.port || 3000;
 app.listen(port, function() {
    
