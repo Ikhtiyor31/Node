@@ -7,9 +7,9 @@ const mongoDB  = async () => {
     const uri = "mongodb+srv://Ikhtiyor:zfgghbh199531@cluster0.ukgsg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     try {
         await mongoose.connect(uri, { useNewUrlParser: true });
-        return console.log("MongoDB successfully connected");
+        return true;
     } catch (err) {
-        return console.log(err);
+        return false;
     }
 };
 export default mongoDB;

@@ -7,9 +7,13 @@ import MongoDB from './utils/mongodb.js'
 import callAllRouters from './routers/allRouters.js';
 const app = express();
 
-
+app.get('/', (req, res ) => {  
 const mongo = MongoDB();
-
+    if ( mongo) 
+        res.json("mongo is connected")
+    else 
+        res.json("mongo is not connected!")
+})
 app.use( bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
