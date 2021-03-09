@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
      auther_id : {type: String},
      title: { type: String},
      content: { type: String},
-     image: {type: String},
+     image: {type: String, default: ''},
      createdAt: { type: Date, default: new Date(asiaTime)}
 });
 

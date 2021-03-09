@@ -8,7 +8,8 @@ const postRouter = express.Router({mergeParams: true});
 postRouter.post('/post', async (req, res ) => {
    
     const {author, title, content } = req.body;
-    const image = req.body.image;
+    
+    const image = (commonUtil.isNotNull(req.files)) ? req.files.image : null;
     const result = await postService.createPost(author, title, content, image);
     if ( result ) {
          res.json(commonUtil.successResult());
