@@ -8,7 +8,7 @@ const postRouter = express.Router({mergeParams: true});
 postRouter.post('/post', async (req, res ) => {
    
     const {author, title, content } = req.body;
-    const image = req.files.image;
+    const image = req.body.image;
     const result = await postService.createPost(author, title, content, image);
     if ( result ) {
          res.json(commonUtil.successResult());
@@ -17,7 +17,7 @@ postRouter.post('/post', async (req, res ) => {
     }
 
 });
-postRouter.get('/hel', async ( req, res ) => {
+postRouter.get('/test', async ( req, res ) => {
     res.json("Hello world");
 })
 export default postRouter;
