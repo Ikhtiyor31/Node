@@ -17,7 +17,6 @@ const postServices = {
             return false;
         }
         return true;
-        
     },
 }
 export default postServices;

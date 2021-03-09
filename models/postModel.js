@@ -5,7 +5,7 @@ mongoose.set('useFindAndModify', false);
 var asiaTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Seoul"});
 
 const postSchema = new mongoose.Schema({
-     auther_id : {type: String},
+     author : {type: String},
      title: { type: String},
      content: { type: String},
      image: {type: String, default: ''},
